@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalita Tudisco - Semijoias</title>
+    <link rel="icon" href="https://i.imgur.com/VOrIrRL.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="initial-screen" class="center">
+        <div class="logo">
+            <img src="https://i.imgur.com/StcjMPz.png" alt="Logo Kalita Tudisco">
+        </div>
+        <h1>Selecione uma opção:</h1>
+        <div class="options-container">
+            <button class="option-button" onclick="selectType('dourado')">Dourado</button>
+            <button class="option-button" onclick="selectType('prata')">Pratas</button>
+        </div>
+    </div>
+
+    <!-- Tela de Produtos -->
+    <div id="products-screen" class="hidden">
+        <header>
+            <button onclick="goHome()">Início</button>
+            <h1 id="selected-type-title"></h1>
+        </header>
+        <div id="categories" class="categories hidden">
+            <button onclick="filterCategory('nomes')">Nomes</button>
+            <button onclick="filterCategory('profissao')">Profissão</button>
+            <button onclick="filterCategory('filhos')">Filhos</button>
+            <button onclick="filterCategory('infantil')">Infantil</button>
+            <button onclick="filterCategory('braceletes')">Braceletes</button>
+        </div>
+        <div id="products-container" class="products-container hidden">
+            <!-- Produtos carregados dinamicamente -->
+        </div>
+    </div>
+
+    <!-- Pop-up para zoom -->
+    <div id="popup" class="popup hidden">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <img src="" alt="Produto">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
