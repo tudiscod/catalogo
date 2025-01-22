@@ -30,6 +30,7 @@ const products = {
         { id: 29, category: 'infantil', img: 'https://i.imgur.com/w0b9riu.jpeg', name: 'Kit Infantil Fada', price: 179.9 },
         { id: 30, category: 'braceletes', img: 'https://i.imgur.com/zmaDrfs.jpeg', name: 'Bracelete Coração com Ponto de Luz para Gravar', price: 179.9 },
         { id: 31, category: 'braceletes', img: 'https://i.imgur.com/TuGrOQT.jpeg', name: 'Bracelete Nó com Pingentes', price: 149.9 },
+        { id: 32, category: 'nomes', img: 'https://i.imgur.com/srCkzvj.jpeg', name: 'Monograma Tradional Bruto', price: 149.9 },
     ],
     prata: [
         { id: 4, category: 'nomes', img: 'https://imgur.com/2A6tkN5.jpeg', name: 'Colar Prata Nome Simples, Corrente veneziana 45cm', price: 249.9 },
