@@ -2,8 +2,7 @@ const products = {
     dourado: [
         { id: 1, category: 'nomes', img: 'https://i.imgur.com/2xyIKoJ.jpeg', name: 'Colar Nome Simples Laser c/ Ponto de Luz com corrente Veneziana com Bolinha', price: 149.9 },
         { id: 2, category: 'nomes', img: 'https://i.imgur.com/vKoZpq7.jpeg', name: 'Colar Nome Simples', price: 129.90 },
-        { id: 3, category: 'nomes', img: 'https://i.imgur.com/nq37kAr.jpeg', name: 'Colar Nome Duplo', price: 149.9 },
-        { id: 4, category: 'nomes', img: 'https://i.imgur.com/gy74O3A.jpeg', name: 'Colar Nome Simples Laser', price: 149.90 },
+        { id: 3, category: 'nomes', img: 'https://i.imgur.com/nq37kAr.jpeg', name: 'Colar Nome Duplo', price: 149.9 },        
         { id: 5, category: 'nomes', img: 'https://i.imgur.com/uI16Z19.jpeg', name: 'Colar Nome Simples Laser c/ Ponto de Luz', price: 139.9 },
         { id: 6, category: 'nomes', img: 'https://i.imgur.com/Gf303Nz.jpeg', name: 'Colar Nome Simples com Adereço Fixo aplicação de ródio', price: 149.9 },
         { id: 7, category: 'profissao', img: 'https://i.imgur.com/ZWVW7jG.jpeg', name: 'Colar Nome Simples com Adereço Fixo Profissão', price: 129.9 },
