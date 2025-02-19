@@ -32,6 +32,14 @@ const products = {
         { id: 30, category: 'braceletes', img: 'https://i.imgur.com/zmaDrfs.jpeg', name: 'Bracelete Coração com Ponto de Luz para Gravar', price: 179.9 },
         { id: 31, category: 'braceletes', img: 'https://i.imgur.com/TuGrOQT.jpeg', name: 'Bracelete Nó com Pingentes', price: 149.9 },
         { id: 32, category: 'nomes', img: 'https://i.imgur.com/srCkzvj.jpeg', name: 'Monograma Tradional Bruto', price: 149.9 },
+	{ id: 33, category: 'profissao', img: 'https://imgur.com/a/rWOPvpn.jpeg', name: 'Broche Profissão Laser', price: 149.9 },
+	{ id: 34, category: 'nomes', img: 'https://imgur.com/zYRTMOH.jpeg', name: 'Inicial Tassia Naves', price: 129.9 },
+        { id: 35, category: 'nomes', img: 'https://imgur.com/JE8Cpmw.jpeg', name: 'Inicial Transversal 5cm', price: 149.9 },
+	{ id: 36, category: 'nomes', img: 'https://imgur.com/a/zmN4VRK.jpeg', name: 'Inicial 2,5cm na Cartier', price: 179.9 },
+	{ id: 37, category: 'nomes', img: 'https://imgur.com/a/aHNcHoj.jpeg', name: 'Plaquinha Vertical c/ Nome e Filhos Pendurado 2 filhos', price: 149.9, observation:'R$20 - desconto P/ 1 Filho' },
+	{ id: 38, category: 'nomes', img: 'https://imgur.com/a/PPqaTXn.jpeg', name: 'Colar Plaquinha Desenho Vazado', price: 179.90 , observation:'modelo disponível até 2 crianças'},
+	    
+	    
     ],
     prata: [
         { id: 4, category: 'nomes', img: 'https://imgur.com/2A6tkN5.jpeg', name: 'Colar Prata Nome Simples, Corrente veneziana 45cm', price: 249.9 },
