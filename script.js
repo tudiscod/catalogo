@@ -36,12 +36,12 @@ const products = {
 	{ id: 34, category: 'nomes', img: 'https://imgur.com/zYRTMOH.jpeg', name: 'Inicial Tassia Naves', price: 129.9 },
         { id: 35, category: 'nomes', img: 'https://imgur.com/JE8Cpmw.jpeg', name: 'Inicial Transversal 5cm', price: 149.9 },
 	{ id: 36, category: 'nomes', img: 'https://imgur.com/eGHMnlU.jpeg', name: 'Inicial 2,5cm na Cartier', price: 179.9 },
-	{ id: 37, category: 'filhos', img: 'https://imgur.com/YorIv2l.jpeg', name: 'Plaquinha Vertical c/ Nome e Filhos Pendurado 2 filhos', price: 149.9, observation:'R$20 - desconto P/ 1 Filho' },
+	{ id: 37, category: 'filhos', img: 'https://imgur.com/YorIv2l.jpeg', name: 'Plaquinha Vertical c/ Nome e Filhos Pendurado 2 filhos', price: 179.9, observation:'R$20 - desconto P/ 1 Filho' },
 	{ id: 38, category: 'filhos', img: 'https://imgur.com/DOpmhXC.jpeg', name: 'Colar Plaquinha Desenho Vazado', price: 179.90 , observation:'modelo disponível até 2 crianças'},
 	{ id: 39, category: 'filhos', img: 'https://imgur.com/t3O4HMx.jpeg', name: 'Coração com Um Filho', price: 179.9 },
-	{ id: 40, category: 'filhos', img: 'https://imgur.com/LX301NQ,jpeg', name: 'Coração com Dois Filhos', price: 189.9 },
-	{ id: 41, category: 'filhos', img: 'https://imgur.com/Xg7rf1f.jpeg', name: 'Coração com Três Filhos', price: 199.9 },
-	{ id: 42, category: 'filhos', img: 'https://imgur.com/ZcaiwOi,jpeg', name: 'Colar c/ Coração Gravado Laser e Filho Cravejado', price: 219.9 },
+	{ id: 40, category: 'filhos', img: 'https://imgur.com/LX301NQ,jpeg', name: 'Coração com Dois Filhos', price: 209.9 },
+	{ id: 41, category: 'filhos', img: 'https://imgur.com/Xg7rf1f.jpeg', name: 'Coração com Três Filhos', price: 229.9 },
+	{ id: 42, category: 'filhos', img: 'https://imgur.com/ZcaiwOi,jpeg', name: 'Colar c/ Coração Gravado Laser e Filho Cravejado', price: 219.9, observation:'R$20 - desconto P/ 1 Filho' },
 	    
 	    
     ],
