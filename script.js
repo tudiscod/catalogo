@@ -44,7 +44,7 @@ const products = {
 	{ id: 42, category: 'filhos', img: 'https://imgur.com/ZcaiwOi,jpeg', name: 'Colar c/ Coração Gravado Laser e Filho Cravejado', price: 219.9, observation:'R$20 - desconto P/ 1 Filho' },
 	{ id: 42, category: 'nomes', img: 'https://imgur.com/6JsV8Dl', name: 'Nome Simples com Corrente Elo Português', price: 149,90 },
         { id: 42, category: 'nomes', img: 'https://imgur.com/8BYOqsM', name: 'Pulseira Fotogravação', price: 179,90 },
-	{ id: 42, category: 'nomes', img: 'https://imgur.com/Y6VOzKp', name: 'Colar Mandala Fotogravação c/ Medalhinha', price: 199,90 }  
+	{ id: 42, category: 'nomes', img: 'https://imgur.com/Y6VOzKp', name: 'Colar Mandala Fotogravação c/ Medalhinha', price: 199,90 },  
     ],
     prata: [
         { id: 4, category: 'nomes', img: 'https://imgur.com/2A6tkN5.jpeg', name: 'Colar Prata Nome Simples, Corrente veneziana 45cm', price: 249.9 },
