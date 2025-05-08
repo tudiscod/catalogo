@@ -1,4 +1,3 @@
-
 // Animar elementos ao rolar
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
