@@ -1,104 +1,147 @@
-// Animar elementos ao rolar
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-});
-document.querySelectorAll('.fade-in, .fade-in-delay').forEach(el => observer.observe(el));
+const products = {
+    dourado: [
+        { id: 1, category: 'nomes', img: 'https://i.imgur.com/2xyIKoJ.jpeg', name: 'Colar Nome Simples Laser c/ Ponto de Luz com corrente Veneziana com Bolinha', price: 149.9 },
+        { id: 2, category: 'nomes', img: 'https://i.imgur.com/vKoZpq7.jpeg', name: 'Colar Nome Simples', price: 129.90 },
+        { id: 3, category: 'nomes', img: 'https://i.imgur.com/nq37kAr.jpeg', name: 'Colar Nome Duplo', price: 149.9 },        
+        { id: 5, category: 'nomes', img: 'https://i.imgur.com/uI16Z19.jpeg', name: 'Colar Nome Simples Laser c/ Ponto de Luz', price: 139.9 },
+        { id: 6, category: 'nomes', img: 'https://i.imgur.com/Gf303Nz.jpeg', name: 'Colar Nome Simples com Adereço Fixo aplicação de ródio', price: 149.9 },
+        { id: 7, category: 'profissao', img: 'https://i.imgur.com/ZWVW7jG.jpeg', name: 'Colar Nome Simples com Adereço Fixo Profissão', price: 129.9 },
+        { id: 8, category: 'nomes', img: 'https://i.imgur.com/WfG56Ni.jpeg', name: 'Colar Nome Simples com Adereço Fixo de Pet', price: 139.9 },
+        { id: 9, category: 'nomes', img: 'https://i.imgur.com/l6urRpo.jpeg', name: 'Colar Nome Simples com Dois Adereço Fixo de Pet', price: 149.9 },
+        { id: 10, category: 'nomes', img: 'https://i.imgur.com/1ZONk5x.png', name: 'Colar Nome Simples Laser com Coração Separado', price: 189.9 },
+        { id: 11, category: 'nomes', img: 'https://i.imgur.com/khjCdvI.jpeg', name: 'Colar Nome Duplo com Coração Cravejado', price: 179.9 },
+        { id: 12, category: 'filhos', img: 'https://i.imgur.com/kvum0gM.jpeg', name: 'Colar Nome Triplo com Dois Acessórios', price: 199.9 },
+        { id: 13, category: 'filhos', img: 'https://i.imgur.com/59mBtm7.jpeg', name: 'Colar Nome Duplo com Dois Acessórios Pendurados', price: 189.9 },
+        { id: 14, category: 'filhos', img: 'https://i.imgur.com/r1ONTXh.jpeg', name: 'Colar Nome Duplo com Dois Acessórios Fixos', price: 189.9 },
+        { id: 15, category: 'nomes', img: 'https://i.imgur.com/Miahf0J.png', name: 'Colar Nome Simples com Borboletas em Ródio', price: 189.9 },
+        { id: 16, category: 'profissao', img: 'https://i.imgur.com/9GxESia.jpeg', name: 'Colar Mandala Profissão em Zircônia', price: 189.9 },
+        { id: 17, category: 'profissao', img: 'https://i.imgur.com/YOTs4JT.jpeg', name: 'Colar Mandala Coração Vazado Profissão Por Amor', price: 149.9 },
+        { id: 18, category: 'profissao', img: 'https://i.imgur.com/4dzfofk.jpeg', name: 'Colar Mandala Simples Profissão Laser', price: 179.9 },
+        { id: 19, category: 'filhos', img: 'https://i.imgur.com/B0C3Cro.jpeg', name: 'Colar Canga Simples Gravação 2 Filhos', price: 189.9 },
+	{ id: 19, category: 'filhos', img: 'https://i.imgur.com/B0C3Cro.jpeg', name: 'Colar Canga Simples Gravação 1 Filho', price: 169.9 },
+        { id: 20, category: 'infantil', img: 'https://i.imgur.com/w38AJ5m.jpeg', name: 'Pulseira Infantil c/ Personagem', price: 99.9 },
+        { id: 21, category: 'infantil', img: 'https://i.imgur.com/ZGsVnVO.jpeg', name: 'Pulseira Infantil c/ Personagem', price: 99.9 },
+        { id: 22, category: 'infantil', img: 'https://i.imgur.com/lBuMFTv.jpeg', name: 'Pulseira Infantil na Corrente de Bolinha', price: 89.9 },
+        { id: 23, category: 'infantil', img: 'https://i.imgur.com/5f1d8Yd.jpeg', name: 'Pulseira Infantil Laser', price: 109.9 },
+        { id: 24, category: 'infantil', img: 'https://i.imgur.com/lGAHJRh.jpeg', name: 'Pulseira Infantil com Acessório', price: 119.9 },
+        { id: 25, category: 'infantil', img: 'https://i.imgur.com/LgNPhwx.png', name: 'Colar Infantil c/ Nome na Plaquinha e Personagem na Cartier ou Elo', price: 149.9 },
+        { id: 26, category: 'infantil', img: 'https://i.imgur.com/9WpvE8x.jpeg', name: 'Colar Infantil c/ Nome e Personagem na Cartier ou Elo', price: 149.9 },
+        { id: 27, category: 'infantil', img: 'https://i.imgur.com/OiBcaCU.jpeg', name: 'Kit Infantil Borboleta', price: 179.9 },
+        { id: 28, category: 'infantil', img: 'https://i.imgur.com/CpzGFTq.jpeg', name: 'Kit Infantil Abelha', price: 179.9 },
+        { id: 29, category: 'infantil', img: 'https://i.imgur.com/w0b9riu.jpeg', name: 'Kit Infantil Fada', price: 179.9 },
+        { id: 30, category: 'braceletes', img: 'https://i.imgur.com/zmaDrfs.jpeg', name: 'Bracelete Coração com Ponto de Luz para Gravar', price: 179.9 },
+        { id: 31, category: 'braceletes', img: 'https://i.imgur.com/TuGrOQT.jpeg', name: 'Bracelete Nó com Pingentes', price: 149.9 },
+        { id: 32, category: 'nomes', img: 'https://i.imgur.com/srCkzvj.jpeg', name: 'Monograma Tradional Bruto', price: 149.9 },
+	{ id: 33, category: 'profissao', img: 'https://imgur.com/HXNy98K.jpeg', name: 'Broche Profissão Laser', price: 149.9 },
+	{ id: 34, category: 'nomes', img: 'https://imgur.com/zYRTMOH.jpeg', name: 'Inicial Tassia Naves', price: 129.9 },
+        { id: 35, category: 'nomes', img: 'https://imgur.com/JE8Cpmw.jpeg', name: 'Inicial Transversal 5cm', price: 149.9 },
+	{ id: 36, category: 'nomes', img: 'https://imgur.com/eGHMnlU.jpeg', name: 'Inicial 2,5cm na Cartier', price: 179.9 },
+	{ id: 37, category: 'filhos', img: 'https://imgur.com/YorIv2l.jpeg', name: 'Plaquinha Vertical c/ Nome e Filhos Pendurado 2 filhos', price: 179.9, observation:'R$20 - desconto P/ 1 Filho' },
+	{ id: 38, category: 'filhos', img: 'https://imgur.com/DOpmhXC.jpeg', name: 'Colar Plaquinha Desenho Vazado', price: 179.90 , observation:'modelo disponível até 2 crianças'},
+	{ id: 39, category: 'filhos', img: 'https://imgur.com/t3O4HMx.jpeg', name: 'Coração com Um Filho', price: 179.9 },
+	{ id: 40, category: 'filhos', img: 'https://imgur.com/LX301NQ,jpeg', name: 'Coração com Dois Filhos', price: 209.9 },
+	{ id: 41, category: 'filhos', img: 'https://imgur.com/Xg7rf1f.jpeg', name: 'Coração com Três Filhos', price: 229.9 },
+	{ id: 42, category: 'filhos', img: 'https://imgur.com/ZcaiwOi.jpeg', name: 'Colar c/ Coração Gravado Laser e Filho Cravejado', price: 219.9, observation:'R$20 - desconto P/ 1 Filho' },
+	{ id: 43, category: 'nomes', img: 'https://imgur.com/6JsV8Dl.jpeg', name: 'Nome Simples com Corrente Elo Português', price: 149.90 },
+        { id: 44, category: 'nomes', img: 'https://imgur.com/8BYOqsM.jpeg', name: 'Pulseira Fotogravação', price: 179.90 },
+	{ id: 45, category: 'nomes', img: 'https://imgur.com/Y6VOzKp.jpeg', name: 'Colar Mandala Fotogravação c/ Medalhinha', price: 199.90 },  
+    ],
+    prata: [
+        { id: 4, category: 'nomes', img: 'https://imgur.com/2A6tkN5.jpeg', name: 'Colar Prata Nome Simples, Corrente veneziana 45cm', price: 249.9 },
+		{ id: 5, category: 'nomes', img: 'https://imgur.com/e0WL5bi.jpeg', name: 'Colar Prata Personalizado com 3 letras, Corrente veneziana', price: 249.9 },
+		{ id: 6, category: 'nomes', img: 'https://imgur.com/xaeyoIR.jpeg', name: 'Colar Prata Nome simples, corrente de elo portugues 45CM', price: 229.9 },
+		{ id: 7, category: 'nomes', img: 'https://imgur.com/Wdf97QH.jpeg', name: 'Colar Prata Nome Composto, corrente de elo portugues', price: 249.9 },
+		{ id: 8, category: 'filhos', img: 'https://imgur.com/nJQHALt.jpeg', name: 'Colar Prata  Personalizado com 4 filhos', price: 299.9 },
+		{ id: 9, category: 'nomes', img: 'https://imgur.com/XDfFLmw.jpeg', name: 'Anel Prata Personalizado - AN00266', price: 199.9 },
+		{ id: 10, category: 'nomes', img: 'https://imgur.com/R5Suojb.jpeg', name: 'Pulseira Prata Veneziana Bolinha 3MM + 1 Letra', price: 159.90 },
+		{ id: 11, category: 'nomes', img: 'https://imgur.com/kk1Xbeh.jpeg', name: 'Colar Prata Personalizado Com Nome Fonte Fina', price: 179.90 },
+		{ id: 12, category: 'nomes', img: 'https://imgur.com/oMd8TXe.jpeg', name: 'Colar Prata Com letras penduradas', price: 199.90, observation:'R$20 - Adicional P/ Letra'},
+		{ id: 13, category: 'nomes', img: 'https://imgur.com/oKFg8tu.jpeg', name: 'Anel Prata Personalizado Com Nome', price: 109.90 },
+		{ id: 14, category: 'nomes', img: 'https://imgur.com/5MYI8dk.jpeg', name: 'Colar Prata Gravações - Letra Poesia / baby', price: 199.90 },
+		{ id: 15, category: 'infantil', img: 'https://imgur.com/WLUs1XW.jpeg', name: 'Pulseira Prata Personalizada Infantil - Fonte Nova', price: 169.90 },
+		{ id: 16, category: 'nomes', img: 'https://imgur.com/300nJ7h.jpeg', name: 'Colar Prata Personalizado - COL00103', price: 179.90 },
+		{ id: 17, category: 'nomes', img: 'https://imgur.com/z6xrmsI.jpeg', name: 'Colar Prata Personalizado Com Nome Duplo e Coração', price: 229.90 },
+		{ id: 18, category: 'filhos', img: 'https://imgur.com/adsuwLT.jpeg', name: 'Colar Prata Personalizado Canga Com 2 Filhos(as)', price: 229.90 },
+		{ id: 19, category: 'nomes', img: 'https://imgur.com/p50YcNf.jpeg', name: 'Colar Prata Personalizado Nome e Coração Vazado, fonte fina.', price: 219.90 },
+		{ id: 20, category: 'nomes', img: 'https://imgur.com/dg9lE1q.jpeg', name: 'Pingente Prata de cachorro ou gato Personalizado', price: 89.90},
+		{ id: 21, category: 'nomes', img: 'https://imgur.com/ezQvzCp.jpeg', name: 'Colar Prata Personalizado - Números', price: 179.90},
+		{ id: 21, category: 'nomes', img: 'https://imgur.com/x1uP4Ff.jpeg', name: 'Berloque Prata Personalizada Patinhas', price: 99.90},
+		{ id: 21, category: 'nomes', img: 'https://imgur.com/x1uP4Ff.jpeg', name: 'Pulseira Prata Pandora', price: 379.90},
+		
+		
+		
+    ],
+};
 
-// Busca CEP automática
-document.getElementById("cep").addEventListener("blur", function () {
-    const cep = this.value.replace(/[^0-9]/g, "");
-    if (cep.length !== 8) return;
-
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(response => response.json())
-        .then(data => {
-            if (!data.erro) {
-                document.getElementById("rua").value = data.logradouro || "";
-                document.getElementById("bairro").value = data.bairro || "";
-                document.getElementById("cidade").value = data.localidade || "";
-                document.getElementById("estado").value = data.uf || "";
-            }
-        });
-});
-
-
-// Validação de CPF
-function validarCPF(cpf) {
-    cpf = cpf.replace(/[^\d]+/g,'');
-    if (cpf === "" || cpf.length !== 11) return false;
-    if (/^(\d)+$/.test(cpf)) return false;
-    let soma = 0;
-    for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
-    let resto = (soma * 10) % 11;
-    if (resto === 10 || resto === 11) resto = 0;
-    if (resto !== parseInt(cpf.charAt(9))) return false;
-    soma = 0;
-    for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
-    resto = (soma * 10) % 11;
-    if (resto === 10 || resto === 11) resto = 0;
-    return resto === parseInt(cpf.charAt(10));
+/**
+ * Exibe os produtos do tipo selecionado (Dourado ou Prata)
+ */
+function selectType(type) {
+    document.getElementById('initial-screen').classList.add('hidden');
+    document.getElementById('products-screen').classList.remove('hidden');
+    document.getElementById('selected-type-title').innerText = type === 'dourado' ? 'Produtos Dourados' : 'Produtos Prata';
+    loadProducts(type);
 }
 
-document.getElementById("cpf").addEventListener("blur", function () {
-    const erro = document.getElementById("cpfErro");
-    if (!validarCPF(this.value)) {
-        erro.textContent = "CPF inválido!";
-    } else {
-        erro.textContent = "";
-    }
-});
+/**
+ * Carrega os produtos do tipo selecionado dinamicamente
+ */
+function loadProducts(type) {
+    const container = document.getElementById('products-container');
+    container.innerHTML = '';
+    container.classList.remove('hidden');
+    document.getElementById('categories').classList.remove('hidden');
 
-// Envio para WhatsApp
-document.getElementById("form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const telefone = document.getElementById("telefone").value;
-    const cpf = document.getElementById("cpf").value;
-    const nascimento = document.getElementById("nascimento").value;
-    const instagram = document.getElementById("instagram").value;
-    const cep = document.getElementById("cep").value;
-    const rua = document.getElementById("rua").value;
-    const numero = document.getElementById("numero").value;
-    const bairro = document.getElementById("bairro").value;
-    const cidade = document.getElementById("cidade").value;
-    const experiencia = document.querySelector('input[name="experiencia"]:checked')?.value || 'Não informado';
-	const estado = document.getElementById("estado").value;
+    products[type].forEach(product => {
+        const productEl = document.createElement('div');
+        productEl.classList.add('product', product.category);
+        productEl.innerHTML = `
+            <img src="${product.img}" alt="${product.name}" onclick="showPopup('${product.img}')">
+            <h2>${product.name}</h2>
+            <br/><br>
+            ${product.observation ? `<p class="observation">${product.observation}</p>` : ''}
+			<br/><br>
+			<p class="price">R$ ${product.price.toFixed(2)}</p>
+        `;
+        container.appendChild(productEl);
+    });
+}
 
 
-    const msg = 
-` *Quero ser consultora Kalita Tudisco!*
+/**
+ * Exibe o pop-up com a imagem ampliada
+ */
+function showPopup(imageSrc) {
+    const popup = document.getElementById('popup');
+    const popupImage = popup.querySelector('img');
+    popupImage.src = imageSrc;
+    popup.classList.remove('hidden');
+    popup.style.display = 'flex';
+}
 
-*Nome:* ${nome}
-*Email:* ${email}
-*Telefone:* ${telefone}
-*CPF:* ${cpf}
-*Nascimento:* ${nascimento}
-*Instagram:* ${instagram}
-*Experiência com Vendas:* ${experiencia}
+/**
+ * Fecha o pop-up
+ */
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+    popup.classList.add('hidden');
+}
 
-*Endereço:*
-${rua}, Nº ${numero}
-*Bairro:* ${bairro}
-*Cidade:* ${cidade}
-*Estado:* ${estado}
-*CEP:* ${cep}`;
+/**
+ * Retorna para a tela inicial
+ */
+function goHome() {
+    document.getElementById('products-screen').classList.add('hidden');
+    document.getElementById('initial-screen').classList.remove('hidden');
+}
 
-    window.open(`https://wa.me/5543991036531?text=${encodeURIComponent(msg)}`, "_blank");
-});
-
-
-
-
-
-document.getElementById('nascimento').addEventListener('input', function (e) {
-  let input = e.target;
-  input.value = input.value
-    .replace(/\D/g, '')
-    .replace(/(\d{2})(\d)/, '$1/$2')
-    .replace(/(\d{2})(\d)/, '$1/$2')
-    .replace(/(\d{4}).*/, '$1');
-});
+/**
+ * Filtra os produtos com base na categoria selecionada
+ */
+function filterCategory(category) {
+    const products = document.querySelectorAll('.product');
+    products.forEach(product => {
+        product.style.display = product.classList.contains(category) ? 'block' : 'none';
+    });
+}
