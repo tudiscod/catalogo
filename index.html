@@ -1,108 +1,48 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Consultora Kalita Tudisco</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalita Tudisco - Semijoias</title>
+    <link rel="icon" href="https://i.imgur.com/VOrIrRL.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <img src="https://i.imgur.com/By7OlHX.png" alt="Logo Kalita Tudisco" class="logo" />
-    </header>
-<section class="apresentacao" style="max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center;">
-  <h2 class="fade-in" style="color: #cc0077;">Seja uma Consultora de Sucesso!</h2>
-  <h3 style="margin-top: 10px; color: #cc0077;">Pronta para Brilhar?</h3>
-  <p style="margin-bottom: 20px;">
-    Junte-se à nossa equipe de consultoras e leve a beleza e a qualidade das semijoias Kalita Tudisco para mais pessoas.
-    Oferecemos todo o suporte para você crescer e alcançar seus objetivos.
-  </p>
-  <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-    <li>💎 Alto potencial de ganhos.</li>
-    <li>✨ Produtos exclusivos e de qualidade.</li>
-    <li>🎓 Suporte e treinamento contínuos.</li>
-  </ul>
-
-  <p style="margin-bottom: 30px;">
-    A Kalita Tudisco Semijoias nasceu para valorizar a beleza única de cada mulher, com semijoias de alto padrão,
-    hipoalergênicas, banhadas a ouro 18k e com 1 ano de garantia. E agora estamos abrindo vagas para novas revendedoras
-    em todo o Brasil! 📍🇧🇷
-  </p>
-
-  <h4 style="margin-bottom: 10px; color: #cc0077;">Por que se tornar uma vendedora Kalita Tudisco?</h4>
-  <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-    <li>💼 ZERO investimento inicial</li>
-    <li>🎁 Você recebe a maleta pronta com peças, embalagens e certificados</li>
-    <li>💸 Comissão de até 60% sobre suas vendas</li>
-    <li>⏰ Liberdade de horários: você vende quando e onde quiser</li>
-    <li>📦 Trabalhamos com pedidos personalizados mensais e entregas organizadas</li>
-    <li>💬 Suporte total via grupo de vendedoras</li>
-  </ul>
-
-  <h4 style="margin-bottom: 10px; color: #cc0077;">E tem mais:</h4>
-  <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-    <li>🏆 Sorteios mensais e semestrais em dinheiro (até R$500!)</li>
-    <li>🎉 Lembrancinha no seu aniversário</li>
-    <li>👯‍♀ Bônus de 10% sobre a venda de revendedoras indicadas</li>
-    <li>🏅 Programa de crescimento com bônus em peças (níveis Bronze, Prata e Ouro!)</li>
-  </ul>
-
-  <p style="margin-bottom: 10px;">
-    Se você busca renda extra, independência financeira ou uma chance real de crescer com uma marca séria e feminina, esse é o seu momento! 💪✨
-  </p>
-</section>
-
-
-  
-    <section class="comissoes">
-        <h2 class="fade-in">Comissões Atrativas</h2>
-        <div class="cards">
-            <div class="card pink fade-in-delay"><strong>30%</strong><span>De: R$99,90 Até R$399,99</span></div>
-            <div class="card orange fade-in-delay"><strong>40%</strong><span>De: R$400,00 Até R$1.599,99</span></div>
-            <div class="card purple fade-in-delay"><strong>50%</strong><span>De: R$1.600,00 Até R$2.999,99</span></div>
-            <div class="card yellow fade-in-delay"><strong>60%</strong><span>Acima de R$3.000,00</span></div>
+    <!-- Tela Inicial -->
+    <div id="initial-screen" class="center">
+        <div class="logo">
+            <img src="https://i.imgur.com/StcjMPz.png" alt="Logo Kalita Tudisco">
         </div>
-    </section>
-
-<section class="cadastro">
-<div class="left fade-in">
-    <img src="https://i.imgur.com/GIC06B6_d.webp?maxwidth=760&fidelity=grand" alt="Consultora Kalita" />
-    
-</div>
-
-        <div class="right fade-in">
-            <h3>Seja uma Consultora Kalita Tudisco!</h3>
-            <form id="form">
-                <input type="text" id="nome" placeholder="Nome Completo" required/>
-                <input type="email" id="email" placeholder="Email" required/>
-                <input type="tel" id="telefone" placeholder="Telefone" required/>
-                <input type="text" id="cpf" placeholder="CPF" required/>
-				<input type="text" id="nascimento" placeholder="Data de Nascimento (dd/mm/aaaa)" required/>
-				<input type="text" id="instagram" placeholder="@Instagram" required/>
-                <span id="cpfErro" class="error-msg"></span>
-                <input type="text" id="cep" placeholder="CEP" required/>
-                <input type="text" id="rua" placeholder="Rua" required/>
-				<input type="text" id="numero" placeholder="Número" required/>
-                <input type="text" id="bairro" placeholder="Bairro" required/>
-                <input type="text" id="cidade" placeholder="Cidade" required/>
-				<input type="text" id="estado" placeholder="Estado" required/>
-                
-    <div class="form-group" style="margin-top: 10px;">
-      <label>Já teve experiência com vendas?</label><br>
-      <label><input type="radio" name="experiencia" value="Sim" required> Sim</label>
-      <label style="margin-left: 60px;"><input type="radio" name="experiencia" value="Não"> Não</label>
+        <h1>Selecione uma opção:</h1>
+        <div class="options-container">
+            <button class="option-button" onclick="selectType('dourado')">Dourado</button>
+            <button class="option-button" onclick="selectType('prata')">Pratas</button>
+        </div>
     </div>
-	</div>
-                <button type="submit">📩 Quero Ser Consultora!</button>
-            </form>
-        </div>
-    </section>
 
-    <footer>
-        © 2025 Kalita Tudisco Semijoias. Todos os direitos reservados.
-    </footer>
+    <!-- Tela de Produtos -->
+    <div id="products-screen" class="hidden">
+        <header>
+            <button onclick="goHome()">Início</button>
+            <h1 id="selected-type-title"></h1>
+        </header>
+        <div id="categories" class="categories hidden">
+            <button onclick="filterCategory('nomes')">Nomes</button>
+            <button onclick="filterCategory('profissao')">Profissão</button>
+            <button onclick="filterCategory('filhos')">Filhos</button>
+            <button onclick="filterCategory('infantil')">Infantil</button>
+            <button onclick="filterCategory('braceletes')">Braceletes</button>
+        </div>
+        <div id="products-container" class="products-container hidden">
+            <!-- Produtos carregados dinamicamente -->
+        </div>
+    </div>
+
+    <!-- Pop-up para zoom -->
+    <div id="popup" class="popup hidden">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <img src="" alt="Produto">
+    </div>
 
     <script src="script.js"></script>
 </body>
